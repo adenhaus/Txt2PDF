@@ -7,7 +7,7 @@ public class TextToPdf {
     public static void main(String[] args) throws IOException {
         String[] items = getFileElements("input.txt");
         String outputFile = "output.pdf";
-        Formatter pdf = new Formatter(outputFile, items);
+        PdfBuilder pdf = new PdfBuilder(outputFile, items);
 
         int numPrints = 0;
         while (numPrints < 1) {
