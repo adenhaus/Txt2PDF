@@ -7,18 +7,17 @@ public class TextToPdf {
     public static void main(String[] args) throws IOException {
         String[] items = getFileElements("input.txt");
         String outputFile = "output.pdf";
-        PDF pdf = new PDF(outputFile);
+        Formatter pdf = new Formatter(outputFile, items);
 
         int numPrints = 0;
-        while (numPrints < 9) {
-            TextFormatter.processText(items, pdf);
+        while (numPrints < 1) {
+            pdf.processText();
             numPrints++;
         }
         pdf.closeDocument();
     }
  
     public static String[] getFileElements(String path) throws FileNotFoundException {
-
         StringBuilder data = new StringBuilder();
         File inputFile = new File(path);
         Scanner sc = new Scanner(inputFile);
