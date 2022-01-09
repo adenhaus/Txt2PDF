@@ -26,7 +26,7 @@ public class PdfBuilder {
             if (isCommand(item)) {
                 formatOnCommand(item);
             } else {
-                currentText.setText(item + " ");
+                currentText.setText(item);
                 currentParagraph.add(currentText);
                 currentText = (MyText) currentText.copyProperties();
             }

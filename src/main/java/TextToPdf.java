@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class TextToPdf {
     public static void main(String[] args) throws IOException {
-        String[] items = getFileElements("input.txt");
+        String[] items = handleCommas(getFileElements("input.txt"));
         String outputFile = "output.pdf";
         PdfBuilder pdf = new PdfBuilder(outputFile, items);
 
@@ -30,5 +30,28 @@ public class TextToPdf {
         sc.close();
 
         return data.toString().split("\n");
+    }
+
+    // Add " " to end of text provided following text does not begin with comma
+    public static String[] handleCommas(String[] items) {
+        for (int i = 0; i < items.length-1; i++) {
+            // Exclude commands
+            if (items[i].charAt(0) != '.') {
+                int j = i+1;
+                while (j < items.length) {
+                    // Scan ahead until text (non-command) is found
+                    if (items[j].charAt(0) == '.') {
+                        j++;
+                    } else {
+                        // Only append " " if next text doesn't begin with comma
+                        if (items[j].charAt(0) != ',') {
+                            items[i] += " ";
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        return items;
     }
 }

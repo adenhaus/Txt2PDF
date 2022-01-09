@@ -16,16 +16,18 @@ public class MyText extends Text {
         super(text);
     }
 
-    // Allows text to be bold and italicised
+    // Allows text to be both bold and italicised
     public void makeFontBold() {
-        if (this.getOwnProperty(20) == this.setFont(italicsFont).getOwnProperty(20)) {
+        if (this.getOwnProperty(20) == this.setFont(italicsFont).getOwnProperty(20)
+                || this.getOwnProperty(20) == this.setFont(boldAndItalicsFont).getOwnProperty(20)) {
             this.setFont(boldAndItalicsFont);
         } else { this.setFont(boldFont); }
     }
 
-    // Allows text to be bold and italicised
+    // Allows text to be both bold and italicised
     public void makeFontItalic() {
-        if (this.getOwnProperty(20) == this.setFont(boldFont).getOwnProperty(20)) {
+        if (this.getOwnProperty(20) == this.setFont(boldFont).getOwnProperty(20)
+                || this.getOwnProperty(20) == this.setFont(boldAndItalicsFont).getOwnProperty(20)) {
             this.setFont(boldAndItalicsFont);
         } else { this.setFont(italicsFont); }
     }
