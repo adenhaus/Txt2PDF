@@ -1,13 +1,14 @@
 import com.itextpdf.layout.element.Paragraph;
 
 public class MyParagraph extends Paragraph {
-
     public void setIndent(int indent) {
         this.setMarginLeft((float)(indent * 20));
     }
 
-    public Paragraph copyProperties() {
+    public MyParagraph copyProperties() {
         MyParagraph newParagraph = new MyParagraph();
+
+        // The integers below correspond to particular properties as per the Itext7 docs
         if (this.hasOwnProperty(70)) {
             newParagraph.setProperty(70, this.getOwnProperty(70)); // Text alignment (fill)
         }

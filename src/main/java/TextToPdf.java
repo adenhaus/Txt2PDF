@@ -9,11 +9,13 @@ public class TextToPdf {
         String outputFile = "output.pdf";
         PdfBuilder pdf = new PdfBuilder(outputFile, items);
 
+        // Arbitrary loop to demonstrate pagination
         int numPrints = 0;
-        while (numPrints < 1) {
+        while (numPrints < 9) {
             pdf.processText();
             numPrints++;
         }
+
         pdf.closeDocument();
     }
  
