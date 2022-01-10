@@ -18,7 +18,7 @@ public class TextToPdf {
 
         pdf.closeDocument();
     }
- 
+
     public static String[] getFileElements(String path) throws FileNotFoundException {
         StringBuilder data = new StringBuilder();
         File inputFile = new File(path);
@@ -35,7 +35,7 @@ public class TextToPdf {
     // Add " " to end of text provided following text does not begin with comma
     public static String[] handleCommas(String[] items) {
         for (int i = 0; i < items.length-1; i++) {
-            // Exclude commands
+            // Skip commands
             if (items[i].charAt(0) != '.') {
                 int j = i+1;
                 while (j < items.length) {

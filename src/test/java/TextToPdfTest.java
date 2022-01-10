@@ -3,7 +3,6 @@ import junit.framework.TestCase;
 import java.io.FileNotFoundException;
 
 public class TextToPdfTest extends TestCase {
-
     public void testGetFileElements() throws FileNotFoundException {
         String[] items = {".large", "My PDF Document", ".normal", ".paragraph", "This is my", ".italics", "very first",
                 ".regular", "pdf document, and the output is formatted really well. " +

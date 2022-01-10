@@ -10,11 +10,7 @@ public class MyDocument extends Document {
     }
 
     public void setIndent(int indent) {
-        this.indent += indent;
-    }
-
-    public void resetIndent() {
-        indent = 0;
+        this.indent = indent;
     }
 
     public int getIndent() {

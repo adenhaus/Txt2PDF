@@ -36,9 +36,9 @@ public class MyText extends Text {
         this.setFont(regularFont);
     }
 
-    public Text copyProperties() throws IOException {
+    // Copies properties (font and size), but not text itself, to new text object
+    public MyText copyProperties() throws IOException {
         MyText newText = new MyText("");
-
         // The integers below correspond to particular properties as per the Itext7 docs
         if (this.hasOwnProperty(20)) {
             newText.setProperty(20, this.getOwnProperty(20)); // Font
